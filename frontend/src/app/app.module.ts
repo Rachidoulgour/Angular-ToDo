@@ -8,13 +8,15 @@ import { SignupComponent } from './components/signup/signup.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { PublicationsComponent } from './components/publications/publications.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    PublicationsComponent
   ],
   imports: [
     BrowserModule,
