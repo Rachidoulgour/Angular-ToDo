@@ -17,4 +17,7 @@ export class UserService {
   signUp(user){
     return this.http.post<any>(this.URL + '/signup', user)
   }
+  login(user){
+    return this.http.post<any>(this.URL + '/login', user)
+  }
 }
