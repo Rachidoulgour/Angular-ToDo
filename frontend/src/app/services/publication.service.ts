@@ -14,4 +14,8 @@ export class PublicationService {
   addList(list){
     return this.http.post<any>(this.URL + '/add-list', list)
   }
+  getLists(){
+    return this.http.get<any>(this.URL + '/get-lists')
+  }
+
 }
