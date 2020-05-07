@@ -1,0 +1,29 @@
+.navigation{
+    display: flex;
+    max-width: 100vw;
+    background-color: rgb(216, 86, 93);
+}
+nav{
+    display: flex;
+    max-width: 100vw;
+}
+nav ul{
+    display: flex;
+    max-width: 100vw;
+    justify-content: space-between;
+}
+nav ul li{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem;
+}
+nav ul li a:hover{
+    transition: .3s;
+    background-color: rgb(228, 135, 140);
+    padding: .3rem .5rem;    
+}
+nav ul li a{
+    text-decoration: none;
+    padding: .3rem .5rem;
+    color: white;
+}
