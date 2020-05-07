@@ -11,6 +11,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PublicationsComponent } from './components/publications/publications.component';
 import { ListsComponent } from './components/lists/lists.component';
 import { TaskComponent } from './components/task/task.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TaskComponent } from './components/task/task.component';
     ProfileComponent,
     PublicationsComponent,
     ListsComponent,
-    TaskComponent
+    TaskComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
