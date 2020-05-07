@@ -2,7 +2,7 @@
     <div class="publisher-section">
         <p>{{list.title}}</p>
         <button (click)="newTask(list._id)" value="{{list.id}}">Añadir Tarea</button>
-        <button (click)="deleteList()">Eliminar Lista</button>
+        <button (click)="deleteList(list.id)">Eliminar Lista</button>
         <div *ngFor="let task of tasks">
             <div *ngIf="list.id === task.list_id">
                 <p>{{task.text}}</p>

@@ -22,6 +22,10 @@ export class ListsComponent implements OnInit {
   ngOnInit(): void {
     this.getLists();
   }
+  refresh($event=null){
+    console.log(event);
+    this.getLists();
+  }
   getLists(){
     this.publicationService.getLists().subscribe(
       res=>{
@@ -37,8 +41,19 @@ export class ListsComponent implements OnInit {
     )
   }
   deleteList(id){
-
+    console.log(id)
+    this.publicationService.deleteList(id).subscribe(
+      res=>{
+        console.log(res)
+        this.refresh();
+      },
+      err=>{
+        console.log(err)
+      }
+    )
   }
+
+
   newTask(){
     
     console.log(event.target.value)
@@ -51,6 +66,7 @@ export class ListsComponent implements OnInit {
     this.publicationService.deleteTask(id).subscribe(
       res=>{
         console.log(res)
+        this.refresh();
       },
       err=>{
         console.log(err)

@@ -31,6 +31,10 @@ export class PublicationService {
     }
     return this.listId;
   }
+  deleteList(id){
+    return this.http.delete<any>(this.URL + '/delete-list/'+id)
+  }
+
   deleteTask(id){
     return this.http.delete<any>(this.URL + '/delete-task/'+id)
   }
