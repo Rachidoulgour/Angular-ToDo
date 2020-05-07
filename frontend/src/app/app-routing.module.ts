@@ -4,6 +4,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { PublicationsComponent } from './components/publications/publications.component';
 import { ListsComponent } from './components/lists/lists.component';
+import { TaskComponent } from './components/task/task.component';
 
 const routes: Routes = [
     {
@@ -17,6 +18,10 @@ const routes: Routes = [
     {
       path: 'añadir-lista',
       component: PublicationsComponent
+    },
+    {
+      path: 'añadir-tarea',
+      component: TaskComponent
     },
     {
       path: 'listas',

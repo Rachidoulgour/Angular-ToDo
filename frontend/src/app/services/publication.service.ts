@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class PublicationService {
   private URL = 'http://localhost:3500'
+  listId;
   constructor(
     private http: HttpClient, 
     private router: Router
@@ -16,6 +17,19 @@ export class PublicationService {
   }
   getLists(){
     return this.http.get<any>(this.URL + '/get-lists')
+  }
+  addTask(task){
+    //let params = JSON.stringify(task);
+    return this.http.post<any>(this.URL + '/add-task', task)
+  }
+  getListId(){
+    let listId = JSON.parse(localStorage.getItem('listId'));
+    if(listId != "undefined"){
+      this.listId = listId
+    }else{
+      this.listId = null;
+    }
+    return this.listId;
   }
 
 }

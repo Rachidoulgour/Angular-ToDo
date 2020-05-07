@@ -1,1 +1,14 @@
-<p>lists works!</p>
+<div *ngFor="let list of lists" class="publication">
+    <div class="publisher-section">
+        <p>{{list.title}}</p>
+        <button (click)="newTask(list._id)" value="{{list.id}}">Añadir Tarea</button>
+        <div *ngFor="let task of tasks">
+            <div *ngIf="list.id === task.list_id">
+                <p>{{task.text}}</p>
+            </div>
+
+        </div>
+        
+        
+    </div>
+</div>

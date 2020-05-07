@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PublicationsComponent } from './components/publications/publications.component';
 import { ListsComponent } from './components/lists/lists.component';
+import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListsComponent } from './components/lists/lists.component';
     LoginComponent,
     ProfileComponent,
     PublicationsComponent,
-    ListsComponent
+    ListsComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
