@@ -36,6 +36,9 @@ export class ListsComponent implements OnInit {
       }
     )
   }
+  deleteList(id){
+
+  }
   newTask(){
     
     console.log(event.target.value)
@@ -43,5 +46,15 @@ export class ListsComponent implements OnInit {
     localStorage.setItem('listId', this.id)
     this.router.navigate(['/añadir-tarea']);
   }
-
+  deleteTask(id){
+    console.log("esto es",id)
+    this.publicationService.deleteTask(id).subscribe(
+      res=>{
+        console.log(res)
+      },
+      err=>{
+        console.log(err)
+      }
+    );
+  }
 }
