@@ -32,4 +32,7 @@ export class UserService {
     return this.identity;
   }
   
+  getToken(){
+    return localStorage.getItem('token');
+  }
 }

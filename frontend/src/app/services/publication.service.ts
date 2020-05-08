@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -12,15 +13,20 @@ export class PublicationService {
     private http: HttpClient, 
     private router: Router
   ) { }
+  getToken(){
+    return localStorage.getItem('token');
+  }
   addList(list){
-    return this.http.post<any>(this.URL + '/add-list', list)
+    let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken())
+    return this.http.post<any>(this.URL + '/add-list', list, {headers: headers})
   }
   getLists(){
     return this.http.get<any>(this.URL + '/get-lists')
   }
   addTask(task){
     //let params = JSON.stringify(task);
-    return this.http.post<any>(this.URL + '/add-task', task)
+    let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken())
+    return this.http.post<any>(this.URL + '/add-task', task, {headers: headers})
   }
   getListId(){
     let listId = JSON.parse(localStorage.getItem('listId'));
@@ -32,10 +38,12 @@ export class PublicationService {
     return this.listId;
   }
   deleteList(id){
-    return this.http.delete<any>(this.URL + '/delete-list/'+id)
+    let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken())
+    return this.http.delete<any>(this.URL + '/delete-list/'+id, {headers: headers})
   }
 
   deleteTask(id){
-    return this.http.delete<any>(this.URL + '/delete-task/'+id)
+    let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken())
+    return this.http.delete<any>(this.URL + '/delete-task/'+id, {headers: headers})
   }
 }
