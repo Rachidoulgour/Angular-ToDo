@@ -1,0 +1,32 @@
+.login-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     /* width: 100vw;  */
+    margin-top: 30vh;
+}
+form{
+    display: flex;
+    flex-direction: column; 
+    width: 15rem;
+    border: solid .05rem rgb(216, 86, 93);
+    padding: 1rem;
+}
+form input{
+    margin-bottom: .5rem;
+    padding-left: .3rem;
+}
+form button{
+    all: unset;
+    align-self: center;
+    text-align: center;
+    color: white;
+    background-color: rgb(76, 161, 76);
+    padding: .2rem .5rem;
+    width: 6rem;
+}
+form button:hover{
+    transition: .3s;
+    cursor: pointer;
+    background-color: rgb(27, 105, 27);
+}

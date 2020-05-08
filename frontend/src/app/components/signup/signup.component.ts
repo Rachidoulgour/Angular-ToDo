@@ -20,9 +20,6 @@ export class SignupComponent implements OnInit {
     console.log(this.user)
     this.userService.signUp(this.user).subscribe(
       res => {
-        console.log(res)
-        //localStorage.setItem('token', res['token']);
-        //localStorage.setItem('user', JSON.stringify(res.user))
         this.router.navigate(['/entrar'])
       },
       err =>{
