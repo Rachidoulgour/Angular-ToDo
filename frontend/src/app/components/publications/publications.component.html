@@ -1,7 +1,7 @@
 <div>
     <div class="login-form">
         <form (submit)="addList()">
-            <input type="email" name="email" [(ngModel)]="list.title" placeholder="Email" required>
+            <input type="text" name="list" [(ngModel)]="list.title" placeholder="Añadir Lista" required>
             
             <button type="submit">Entrar</button>
         </form>

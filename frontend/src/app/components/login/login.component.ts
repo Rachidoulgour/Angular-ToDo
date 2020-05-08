@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('user', JSON.stringify(res.user));
         localStorage.setItem('token', res.token);
         console.log(res.token)
+        this.router.navigate(['/listas']);
         
         
       },
