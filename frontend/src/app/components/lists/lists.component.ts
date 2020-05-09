@@ -16,6 +16,7 @@ export class ListsComponent implements OnInit {
   //list:List;
   user;
   user_id;
+  id;
   
   constructor(private publicationService:PublicationService,
     private userService:UserService, 

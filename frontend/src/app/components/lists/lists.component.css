@@ -1,0 +1,50 @@
+.user{
+    text-align: center;
+}
+.lists{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem 2rem;
+}
+.publication{
+    border: solid .05rem rgb(216, 86, 93);
+    margin: 2rem 2rem;
+}
+.list-title{
+    background-color: rgb(216, 86, 93);
+    color: white;
+    text-align: center;
+    padding: .5rem .5rem;
+    margin-top: 0;
+}
+.one-list button{
+    all: unset;
+    margin: 1rem;
+}
+.one-list .add-btn{
+    background-color: rgb(76, 161, 76);
+    color: white;
+    padding: .2rem .5rem;
+}
+.one-list .add-btn:hover{
+    transition: .3s;
+    cursor: pointer;
+    background-color: rgb(27, 105, 27);
+}
+.one-list .delete-btn{
+    background-color: rgb(216, 86, 93);
+    color: white;
+    padding: .2rem .5rem;
+}
+.one-list .delete-btn:hover{
+    transition: .3s;
+    cursor: pointer;
+    background-color: rgb(207, 20, 29);
+}
+.task{
+    border: solid .05rem rgb(216, 86, 93);
+    margin: 0 .4rem .5rem .4rem;
+}
+.task-title{
+    padding: .2rem .4rem;
+}
