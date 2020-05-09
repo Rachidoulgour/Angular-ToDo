@@ -3,6 +3,7 @@ import {PublicationService} from '../../services/publication.service';
 import {List} from "../../interfaces/List";
 import { Router } from '@angular/router';
 import { Task } from 'src/app/interfaces/Task';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-lists',
@@ -13,21 +14,26 @@ export class ListsComponent implements OnInit {
   lists:List[];
   tasks:Task[];
   //list:List;
-  id;
+  user;
+  user_id;
   
-  constructor(private publicationService:PublicationService, private router: Router) { 
-    
+  constructor(private publicationService:PublicationService,
+    private userService:UserService, 
+    private router: Router) { 
+    this.user = this.userService.getIdentity();
   }
 
   ngOnInit(): void {
-    this.getLists();
+    this.getLists(this.user_id);
   }
   refresh($event=null){
     console.log(event);
-    this.getLists();
+    this.getLists(this.user_id);
   }
-  getLists(){
-    this.publicationService.getLists().subscribe(
+  getLists(id){
+    let user_id = this.user.id
+    console.log(user_id)
+    this.publicationService.getLists(user_id).subscribe(
       res=>{
         console.log(res)
         this.lists = res.lists;

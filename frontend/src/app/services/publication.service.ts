@@ -20,8 +20,9 @@ export class PublicationService {
     let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken())
     return this.http.post<any>(this.URL + '/add-list', list, {headers: headers})
   }
-  getLists(){
-    return this.http.get<any>(this.URL + '/get-lists')
+  getLists(user_id){
+    let headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization', this.getToken())
+    return this.http.get<any>(this.URL + '/get-lists/'+user_id, {headers: headers})
   }
   addTask(task){
     //let params = JSON.stringify(task);
